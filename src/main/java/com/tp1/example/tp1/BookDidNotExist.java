@@ -6,4 +6,5 @@ import org.springframework.http.HttpStatus;
 
 @ExceptionMapping(statusCode = HttpStatus.NOT_FOUND, errorCode = "Book wasn't found")
 public class BookDidNotExist extends RuntimeException{
+
 }

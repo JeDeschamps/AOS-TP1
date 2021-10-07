@@ -17,6 +17,9 @@ public class BookEntity {
 
     String esbn;
 
+    public BookEntity() {
+    }
+
     public String getName() {
         return name;
     }
