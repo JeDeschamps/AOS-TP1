@@ -14,8 +14,9 @@
     <name>tp1</name>
     <description>tp1</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -39,35 +40,37 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-
-            <groupId>org.springframework.boot</groupId>
-
-            <artifactId>spring-boot-starter-test</artifactId>
-
-            <scope>test</scope>
-
         </dependency>
         <dependency>
             <groupId>me.alidg</groupId>
             <artifactId>errors-spring-boot-starter</artifactId>
             <version>1.4.0</version>
         </dependency>
+	<dependency>
+            <groupId>org.postgresql </groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.8</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>3.0.3</version>
+                <configuration>
+                    <appName>tp2-deschamps-mansard</appName>
+                    <processTypes>
+                        <web>java -cp /home/local.isima.fr/jedeschamp2/AOS-TP1/AOS-TP1/target/classes/com/tp1/example/tp1/Tp1Application.class</web>
+                    </processTypes>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
-
 </project>
